@@ -13,6 +13,8 @@ import com.t3tr3x.helix.core.FileControl;
 import com.t3tr3x.helix.core.Main;
 
 public class CallManager{
+	
+	private static CallManager instance;
 
 	private Main main;
 	private Commands coms;
@@ -97,4 +99,5 @@ public class CallManager{
 		}
 		return false;
 	}
+	public static CallManager getInstance() { return instance; }
 }

@@ -17,11 +17,9 @@ public class Commands implements CommandExecutor {
 
 	
 	private Main main;
-	private Commands c;
-	
-	CallManager cm;
     
     Main units = Main.getInstance();
+    CallManager cm = CallManager.getInstance();
 
     public Commands(Main plugin) {
         this.main = plugin;
@@ -30,7 +28,6 @@ public class Commands implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
         if (!(sender instanceof Player)) {
             sender.sendMessage("You Can't Dispatch From Console!");
-            Player p = (Player) sender;
             return true;
         }
 

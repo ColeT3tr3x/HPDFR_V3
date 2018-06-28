@@ -1,0 +1,33 @@
+name: HPDFR
+version: 0.0.0.1
+description: Hellix Fire Police and Rescue Plugin!
+author: Helix
+
+main: com.t3tr3x.helix.core.Main
+
+commands:
+  dispatch:
+    description: Main command for the dispatch group!
+  ems:
+    description: Main command for the ems group!
+  fire:
+    description: Main command for the fire group!
+  police:
+    description: Main command for the police group!
+
+permissions:
+  hpdfr.*:
+    description: Gives access to all HPDFR commands!
+    children:
+      hpdfr.dispatch: true
+      hpdfr.fire: true
+      hpdfr.police: true
+      hpdfr.ems: true
+  hpdfr.dispatch:
+    description: Gives access to all dispatch commands!
+  hpdfr.fire:
+    description: Gives access to all fire commands!
+  hpdfr.police:
+    description: Gives access to all police commands!
+  hpdfr.ems:
+    description: Gives access to all ems commands!

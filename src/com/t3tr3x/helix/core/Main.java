@@ -57,5 +57,9 @@ public class Main extends JavaPlugin {
     public FileControl getConfigfc() {
         return this.fc;
     }
+    
+    public CallManager getcm() {
+    	return this.cm;
+    }
 
 }

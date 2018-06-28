@@ -18,7 +18,7 @@ public class CallManager{
 
 	private Main main;
 	private Commands coms;
-	private List<Call> calls;
+	private List<Call> calls = new ArrayList<>();
 	private FileControl unitStorage;
 
 	public CallManager(Main main)
@@ -26,6 +26,7 @@ public class CallManager{
 		this.main = main;
 		this.unitStorage = new FileControl(new File(main.getDataFolder(), "units.yml"));
 	}
+	
 	public void startCall(Player dispatcher, Player target, String msg, String unitType, int unitsNeeded)
 	{
 		List<Player> available = getAvailableUnits(unitType);
@@ -89,6 +90,11 @@ public class CallManager{
 	unitPlayers.remove(player.getName());
 	unitStorage.getConfig().set(unitType, unitPlayers);
 	unitStorage.save();
+	}
+	public boolean isUnitType(String unitType)
+	{
+	    if(unitStorage.getConfig().contains(unitType))return true;
+	    return false;
 	}
 	public boolean isOnCall(Player player)
 	{

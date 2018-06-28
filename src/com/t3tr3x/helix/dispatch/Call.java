@@ -27,12 +27,12 @@ public class Call {
         List<Player> playersInUnit = cm.getAvailableUnits(unitType);
         for(int i = 0; i < unitsNeeded; i++)
         {
-            unitPlayers.add(playersInUnit.get(new Random().nextInt(playersInUnit.size()-1)));
+            unitPlayers.add(playersInUnit.get(new Random().nextInt(playersInUnit.size())));
             playersInUnit.remove(unitPlayers.get(i));
         }
-        unitPlayers.forEach(player -> player.sendMessage(color(("&b" + target.getName() + " &6needs help! Call Message: " + callMessage))));
-        unitPlayers.forEach(player -> player.sendMessage(color("&b" + target.getName() + "'s location: " + target.getWorld() + ": " + target.getLocation().getBlockX() + "," + target.getLocation().getBlockY() + "," + target.getLocation().getBlockZ())));
-        target.sendMessage(color("&cThe dispatcher has dispatched " + unitsNeeded + " " + unitType + " units to your location. They will be there shortly."));
+        unitPlayers.forEach(player -> player.sendMessage(color(("&4&lDispatch:" + "&b " + target.getName() + " &6Needs Help! &o| &6" + callMessage))));
+        unitPlayers.forEach(player -> player.sendMessage(color("&b" + target.getName() + "'s location: &6" + target.getWorld().getName() + ": " + target.getLocation().getBlockX() + "," + target.getLocation().getBlockY() + "," + target.getLocation().getBlockZ())));
+        target.sendMessage(color("&cDispatch has sent " + unitsNeeded + " " + unitType + " units to your location. They will be there shortly."));
         finished = false;
     }
 

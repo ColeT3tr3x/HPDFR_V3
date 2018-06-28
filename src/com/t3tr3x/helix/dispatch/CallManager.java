@@ -24,11 +24,6 @@ public class CallManager{
 		this.main = main;
 		this.unitStorage = new FileControl(new File(main.getDataFolder(), "units.yml"));
 	}
-
-	public CallManager(Commands coms) {
-		this.coms = coms;
-	}
-
 	public void startCall(Player dispatcher, Player target, String msg, String unitType, int unitsNeeded)
 	{
 		List<Player> available = getAvailableUnits(unitType);

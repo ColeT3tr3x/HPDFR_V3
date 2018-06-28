@@ -12,7 +12,7 @@ public class Main extends JavaPlugin {
     private static Main instance;
     private FileControl fc;
     private CallManager cm;
-
+    		
 
     @Override
     public void onEnable() {

@@ -19,7 +19,7 @@ public class Commands implements CommandExecutor {
 	private Main main;
 	private Commands c;
 	
-	CallManager cm = new CallManager(this);
+	CallManager cm;
     
     Main units = Main.getInstance();
 
@@ -49,7 +49,7 @@ public class Commands implements CommandExecutor {
         if (args[0].equalsIgnoreCase("add")) {
         	cm.addUnit(args[1]);
         	sender.sendMessage(color("&1&l"+args[1]+" has been created!"));
-        	return false;
+        	return true;
         }
         if (args[0].equalsIgnoreCase("hire")) {
         	Player target = Bukkit.getPlayer(args[1]); 
